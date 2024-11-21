@@ -97,10 +97,14 @@ button:focus-visible {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #1b232a;
 }
 
@@ -193,4 +197,73 @@ a:hover {
 
 a:active {
   color: #3ea28d;
+}
+
+.popup {
+  padding: 40px;
+  border: 1px solid #5ed5a8;
+  border-radius: 4px;
+  color: white;
+}
+
+.loading {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 4px solid #5ed5a8;
+  border-bottom-color: transparent;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.popup {
+  transition: 1s ease;
+  transition-property: width, height;
+  width: 110px;
+  height: 110px;
+  interpolate-size: allow-keywords;
+}
+
+.popup.loaded {
+  width: 400px;
+  height: auto;
+}
+
+.popup__wrap {
+  display: none;
+  width: 320px;
+  opacity: 1;
+  transition: 2s opacity ease;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.popup__loading {
+  transition: 0.3s opacity ease;
+  transition-behavior: allow-discrete;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.popup.loaded .popup__loading {
+  transition-duration: 2s;
+  display: none;
+  opacity: 0;
+}
+
+.popup.loaded .popup__wrap {
+  display: block;
 }
