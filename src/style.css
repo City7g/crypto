@@ -212,6 +212,12 @@ a:active {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .popup {
+    padding: 20px;
+  }
+}
+
 .loading {
   width: 30px;
   height: 30px;
@@ -258,6 +264,12 @@ a:active {
 
   @starting-style {
     opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .popup__wrap {
+    width: 280px;
   }
 }
 
