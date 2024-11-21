@@ -152,6 +152,12 @@ form {
   box-shadow: 0 0 10px 0 #5ed5a8;
 }
 
+@media (max-width: 768px) {
+  .popup.loaded {
+    max-width: 300px;
+  }
+}
+
 input {
   padding: 10px;
   border: 1px solid #5ed5a8;
@@ -236,6 +242,12 @@ a:active {
 .popup.loaded {
   width: 400px;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .popup.loaded {
+    width: 300px;
+  }
 }
 
 .popup__wrap {
